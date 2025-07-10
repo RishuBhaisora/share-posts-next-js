@@ -47,13 +47,12 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // Set session cookie
     const response = NextResponse.json({ 
       success: true,
       message: 'Registration successful',
       user 
     })
-    
+
     response.cookies.set('user-id', user.id, {
       httpOnly: true,
       maxAge: 30 * 24 * 60 * 60, // 30 days

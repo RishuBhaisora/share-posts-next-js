@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
       message: 'Login successful',
       user: userWithoutPassword
     })
-    
+
     response.cookies.set('user-id', user.id, {
       httpOnly: true,
       maxAge: 30 * 24 * 60 * 60, // 30 days
